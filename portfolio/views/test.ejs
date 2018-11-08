@@ -1,0 +1,31 @@
+
+	<% include templates/header %> 
+        <h3>Các sản phẩm đã xem</h3>				
+		<div class="ish-row ish-content ish-portfolio ish-macy">
+           
+             
+            
+        <% if (list) { %>
+            <% list.forEach(id => { %>
+                <% data.product.forEach(function(value){ %>
+                    <% if (value.id == id) { %>    
+                        <a class="ish-portfolio-item ish--tc13 ish-portfolio-<%= value.categories %> " href="/<%= value.seo%>.<%= value.id %> ">
+                            <div class="ish-portfolio-item__image-container">
+                                <img class="ish-portfolio-item__image" src="<%= value.imgBackground  %>"  alt="business cards">
+                            </div>
+                            <div class="ish-portfolio-item__desc">
+                                <span class="ish-portfolio-item__title"><%= value.title %> </span>
+                                <span class="ish-portfolio-item__subtitle"><%= value.categories %> </span>
+                            </div>
+                        </a>
+                    <% } %>
+                <% }) %>
+            <% }) %>
+        <% } %>
+
+        
+
+		</div>
+	<% include templates/footer %> 
+
+		
